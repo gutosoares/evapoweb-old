@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Método Jensen-Haise - Calculo de Evapotranspiração</title>
+
+	<link rel="stylesheet" href="https://storage.googleapis.com/code.getmdl.io/1.0.5/material.indigo-pink.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://storage.googleapis.com/code.getmdl.io/1.0.5/material.min.js"></script>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <script type="text/javascript" src="js/jenhai.js"></script>
+</head>
+<body>
+    <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
+        <header class="mdl-layout__header">
+			<div class="mdl-layout__header-row">
+				<span class="mdl-layout-title">EvapoWeb</span>
+				<div class="mdl-layout-spacer"></div>
+
+				<nav class="mdl-navigation mdl-navigation--large-screen-only">
+					<a class="mdl-navigation__link" href="index.html">Home</a>
+					<a class="mdl-navigation__link" href="panmon.html">Penman - Monteith (FAO56)</a>
+					<a class="mdl-navigation__link" href="linacre.html">Linacre</a>
+					<a class="mdl-navigation__link" href="harsam.html">Hargreaves-Samani</a>
+		        	<a class="mdl-navigation__link" href="jenhai.html">Jensen-Haise</a>
+		        	<a class="mdl-navigation__link" href="makkink.html">Makkink</a>
+		        	<a class="mdl-navigation__link" href="tanque.html">Tanque Classe A</a>
+				</nav>
+			</div>
+		</header> <!-- fim header -->
+
+        <div class="mdl-layout__drawer">
+			<span class="mdl-layout-title">Métodos</span>
+			<nav class="mdl-navigation">
+				<a class="mdl-navigation__link" href="panmon.html">Penman - Monteith (FAO56)</a>
+				<a class="mdl-navigation__link" href="linacre.html">Linacre</a>
+				<a class="mdl-navigation__link" href="harsam.html">Hargreaves-Samani</a>
+		    	<a class="mdl-navigation__link" href="jenhai.html">Jensen-Haise</a>
+	        	<a class="mdl-navigation__link" href="makkink.html">Makkink</a>
+	        	<a class="mdl-navigation__link" href="tanque.html">Tanque Classe A</a>
+			</nav>
+		</div> <!-- fim drawer -->
+
+        <main class="mdl-layout__content">
+            <div class="page-content">
+                <div class="mdl-grid">
+                    <div class="mdl-cell mdl-cell--9-col">
+                        <h1 class="title-method"> Método Jensen-Haise</h1>
+                        <form action="#">
+                            <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+								<input id="dia" type="text" class="mdl-textfield__input" pattern="-?[0-9]*(\.[0-9]+)?">
+								<label for="dia" class="mdl-textfield__label">Dia:</label>
+								<span class="mdl-textfield__error">Isso não é um número!</span>
+							</div>
+
+							<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+								<input id="mes" type="text" class="mdl-textfield__input" pattern="-?[0-9]*(\.[0-9]+)?">
+								<label for="mes" class="mdl-textfield__label">Mês:</label>
+								<span class="mdl-textfield__error">Isso não é um número!</span>
+							</div>
+
+							<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+								<input id="ano" type="text" class="mdl-textfield__input" pattern="-?[0-9]*(\.[0-9]+)?">
+								<label for="ano" class="mdl-textfield__label">Ano:</label>
+								<span class="mdl-textfield__error">Isso não é um número!</span>
+							</div>
+
+							<br>
+
+							<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+								<input id="temp1" class="mdl-textfield__input" type="text" pattern="-?[0-9]*(\.[0-9]+)?">
+								<label class="mdl-textfield__label"	for="temp1">Temperatura: (ás 9h)</label>
+								<span class="mdl-textfield__error">Isso não é um número!</span>
+							</div>
+
+							<br>
+
+							<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+								<input id="temp2" class="mdl-textfield__input" type="text" pattern="-?[0-9]*(\.[0-9]+)?">
+								<label class="mdl-textfield__label" for="temp2">Temperatura: (ás 21h)</label>
+								<span class="mdl-textfield__error">Isso não é um número!</span>
+							</div>
+
+							<br>
+
+							<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+								<input id="tempMax" class="mdl-textfield__input" type="text" pattern="-?[0-9]*(\.[0-9]+)?">
+								<label class="mdl-textfield__label" for="tempMax">Temperatura máxima: (˚C)</label>
+								<span class="mdl-textfield__error">Isso não é um número!</span>
+							</div>
+
+							<br>
+
+							<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+								<input id="tempMin" type="text" class="mdl-textfield__input" pattern="-?[0-9]*(\.[0-9]+)?">
+								<label for="tempMin" class="mdl-textfield__label">Temperatura mínima: (˚C)</label>
+								<span class="mdl-textfield__error">Isso não é número!</span>
+							</div>
+
+                            <br>
+
+                            <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+								<input id="latitude-graus" class="mdl-textfield__input" type="text" pattern="-?[0-9]*(\.[0-9]+)?">
+								<label class="mdl-textfield__label" for="latitude-graus">Latitude:(º) OBS:(-)Sul e (+)Norte</label>
+								<span class="mdl-textfield__error">Isso não é um número!</span>
+							</div>
+
+							<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+								<input id="latitude-min" class="mdl-textfield__input" type="text" pattern="-?[0-9]*(\.[0-9]+)?">
+								<label class="mdl-textfield__label" for="latitude-min">(')</label>
+								<span class="mdl-textfield__error">Isso não é um número!</span>
+							</div>
+
+                            <br>
+
+                            <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+								<input id="brilhoSolar" class="mdl-textfield__input" type="text" pattern="-?[0-9]*(\.[0-9]+)?">
+								<label class="mdl-textfield__label" for="brilhoSolar">Brilho solar: (num horas)</label>
+								<span class="mdl-textfield__error">Isso não é um número!</span>
+							</div>
+
+                            <br>
+
+							<div class="mdl-textfield mdl-js-textfied mdl-textfield--floating-label calc-result">
+								<input id="resultado" class="mdl-textfield__input" type="text" pattern="-?[0-9]*(\.[0-9]+)?">
+								Resultado: <label class="mdl-textfield__label" for="resultado"></label>
+							</div>
+
+							<br>
+
+							<button type="submit" class="mdl-button mdl-js-button mdl-button--raised mdl-button--accent mdl-js-ripple-effect calc-btn" onclick="jenhai()">Calcular!</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </main> <!-- fim do conteudo principal -->
+
+        <footer class="mdl-mini-footer">
+			<div class="mdl-mini-footer__left-section">
+				<div class="mdl-logo">EvapoWeb</div>
+				<ul class="mdl-mini-footer__link-list">
+					<li><a href="#">Ajuda</a></li>
+					<li><a href="#">Privacidade e Termos</a></li>
+				</ul>
+			</div>
+
+			<div class="mdl-mini-footer__right-section">
+				<div class="mdl-logo">Desenvolvido por</div>
+				<ul class="mdl-mini-footer__link-list">
+					<li><a href="#"></a>Augusto Soares</li>
+					<li><a href="#"></a>Thaís Ribeiro</li>
+				</ul>
+			</div>
+		</footer> <!-- fim footer -->
+    </div> <!-- conteudo -->
+</body>
+</html>

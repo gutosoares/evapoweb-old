@@ -1,0 +1,25 @@
+.mdl-cell {
+	background: #eee;
+	height: 100%;
+	margin: 0 auto;
+	margin-top: 20px;
+}
+
+.title-method {
+	text-align: center;
+}
+
+.mdl-textfield input, label, span {
+	margin-left: 20px;
+}
+
+.calc-result {
+	margin: 0 auto;
+	display: block;
+}
+
+.calc-btn {
+	text-align: center;
+	display: block;
+	margin: 20px;
+}
