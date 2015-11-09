@@ -256,7 +256,13 @@ function penmon() {
 
     // calculo do angulo do nascer do sol
     var ws;
-    ws = Math.acos((-Math.tan(latitude)) * Math.tan(decSolar));
+    ws = Math.acos((Math.tan(latitude)) * (Math.tan(decSolar)));
     console.log(ws);
+
+    // TODO corrigir esta parte!
+
+    // calculo  da duração do dia
+    var n;
+    n = ((2 * ws) / 15);
 
 }
