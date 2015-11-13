@@ -252,14 +252,33 @@ function penmon() {
 
     // calculo da latitude
 	var latitude;
-	latitude = ((latGraus + (latMin)/60) * (Math.PI / 180));
+    if(latGraus > 0) {
+	    latitude = ((latGraus + (latMin)/60) * (Math.PI / 180));
+    }
+    else {
+        latitude = ((latGraus + (-latMin)/60) * (Math.PI / 180));
+    }
 
     // calculo do angulo do nascer do sol
     var ws;
-    ws = Math.acos((Math.tan(latitude)) * (Math.tan(decSolar)));
+    ws = Math.acos((-Math.tan(latitude)) * (Math.tan(decSolar)));
 
-    // calculo  da duração do dia
+    // calculo da duração do dia
     var n;
-    n = ((2 * ws) / 15);
+    n = ((24 / Math.PI) * ws);
+
+    // calculo relativa Terra-Sol
+    var dr;
+    dr = (1 + 0.033 * (Math.cos(((2 * Math.PI) / 365) * diaJuliano)));
+
+    // calculo da radiação no topo da atmosfera
+    var ra;
+    ra = (37.586 * dr * (ws * Math.sin(latitude) * Math.sin(decSolar) + Math.cos(latitude) * Math.cos(decSolar) * Math.sin(ws)));
+
+    console.log("ra", ra);
+    console.log("dr", dr);
+    console.log("ws", ws);
+    console.log("lat", latitude);
+    console.log("decsolar", decSolar);
 
 }
