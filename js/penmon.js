@@ -248,18 +248,15 @@ function penmon() {
 
     // calculo da declinação solar
     var decSolar;
-    decSolar = (23.45 * Math.sin((((2 * Math.PI) / 365) * diaJuliano) - 1.405));
+    decSolar = (0.4093 * (Math.sin((((2 * Math.PI) / 365) * diaJuliano) - 1.405)));
 
     // calculo da latitude
 	var latitude;
-	latitude = -(latGraus + (latMin)/60);
+	latitude = ((latGraus + (latMin)/60) * (Math.PI / 180));
 
     // calculo do angulo do nascer do sol
     var ws;
     ws = Math.acos((Math.tan(latitude)) * (Math.tan(decSolar)));
-    console.log(ws);
-
-    // TODO corrigir esta parte!
 
     // calculo  da duração do dia
     var n;
