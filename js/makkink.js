@@ -215,4 +215,29 @@ function makkink() {
     // calculo do coeficiente psicrométrico
     var coePis;
     coePis = (0.0016286 * (pAtm / 2.45));
+
+    // calculo da latitude
+	var latitude;
+    if(latGraus > 0) {
+	    latitude = ((latGraus + (latMin)/60) * (Math.PI / 180));
+    }
+    else {
+        latitude = ((latGraus + (-latMin)/60) * (Math.PI / 180));
+    }
+
+    // calculo do angulo do nascer do sol
+    var ws;
+    ws = Math.acos((-Math.tan(latitude)) * (Math.tan(decSolar)));
+
+    // calculo da declinação solar
+    var decSolar;
+    decSolar = (0.4093 * (Math.sin((((2 * Math.PI) / 365) * diaJuliano) - 1.405)));
+
+    // calculo relativa Terra-Sol
+    var dr;
+    dr = (1 + 0.033 * (Math.cos(((2 * Math.PI) / 365) * diaJuliano)));
+
+    // calculo da radiação no topo da atmosfera
+    var ra;
+    ra = (37.586 * dr * (ws * Math.sin(latitude) * Math.sin(decSolar) + Math.cos(latitude) * Math.cos(decSolar) * Math.sin(ws)));
 }
