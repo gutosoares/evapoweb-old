@@ -240,4 +240,14 @@ function makkink() {
     // calculo da radiação no topo da atmosfera
     var ra;
     ra = (37.586 * dr * (ws * Math.sin(latitude) * Math.sin(decSolar) + Math.cos(latitude) * Math.cos(decSolar) * Math.sin(ws)));
+
+    // calculo  da rediação solar incidente
+    var rs;
+    rs = ((0.25 + 0.50 * (brilhoSolar / n)) * ra);
+
+    // calculo do Método Makkink
+    var eto = 0;
+    eto = (0.61 * (rs / 2.45) * (decPreSat / (decPreSat + coePis)) - 0.12);
+
+    document.getElementById('resultado').value = eto.toFixed(2);
 }
