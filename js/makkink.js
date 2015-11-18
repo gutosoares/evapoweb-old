@@ -71,4 +71,17 @@ function makkink() {
         alert("Entre com o valor do brilho solar.");
         return false;
     }
+
+    // criando as variaveis iniciais
+	var dia = parseFloat(document.getElementById('dia').value);
+	var mes = parseFloat(document.getElementById('mes').value);
+	var ano = parseFloat(document.getElementById('ano').value);
+	var temp1 = parseFloat(document.getElementById('temp1').value);
+	var temp2 = parseFloat(document.getElementById('temp2').value);
+	var tempMax = parseFloat(document.getElementById('tempMax').value);
+	var tempMin = parseFloat(document.getElementById('tempMin').value);
+    var tempBulbo = parseFloat(document.getElementById('tempBulbo').value);
+    var latGraus = parseFloat(document.getElementById('latitude-graus').value);
+	var latMin = parseFloat(document.getElementById('latitude-min').value);
+	var brilhoSolar = parseFloat(document.getElementById('brilhoSolar').value);
 }
