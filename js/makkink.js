@@ -193,4 +193,16 @@ function makkink() {
             diaJuliano = (calendarioDia.janeiro + calendarioDia.fevereiro + calendarioDia.marco + calendarioDia.abril + calendarioDia.maio + calendarioDia.junho + calendarioDia.julho + calendarioDia.agosto + calendarioDia.setembro + calendarioDia.outubro + calendarioDia.novembro + dia);
         }
     }
+
+    // calculo da temperatura media
+    var tempMedia;
+    tempMedia = ((temp1 + tempMax + tempMin + (2 * temp2)) / 5);
+
+    // calculo da pressão de saturação
+    var es;
+    es = (0.6108 * (Math.pow(10, ((7.5 * tempMedia) / (237.3 + tempMedia)))));
+
+    // calculo da declividade da curva de pressão de saturação
+    var decPreSat;
+    decPreSat = ((4098 * es) / (Math.pow((tempMedia + 237.3), 2)));
 }
