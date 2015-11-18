@@ -279,11 +279,19 @@ function penmon() {
     var rs;
     rs = ((0.25 + 0.50 * (brilhoSolar / n)) * ra);
 
-    console.log("ra", ra);
-    console.log("dr", dr);
-    console.log("ws", ws);
-    console.log("lat", latitude);
-    console.log("decsolar", decSolar);
-    console.log("rs", rs);
+    // calculo do saldo de radiação de ondas curtas
+    var boc;
+    boc = ((1 - 0.23) * rs);
+
+    // caculo balanço de ondas longas
+    var eaMod = ((ea * 760) / 100);
+    var tempMaxK = (tempMax + 273);
+    var tempMinK = (tempMin + 273);
+
+    var bol;
+    bol = -(0.000000004903 * (tempMedia + 273) * (0.09 * Math.sqrt(eaMod) - 0.56) * (0.1 + 0.9 * (brilhoSolar/ n)));
+
+    console.log("eaMod", eaMod);
+    console.log("bol", bol);
 
 }
