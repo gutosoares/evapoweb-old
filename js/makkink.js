@@ -57,6 +57,11 @@ function makkink() {
         return false;
     }
 
+    if(document.getElementById("pAtm").value == "") {
+        alert("Entre com o valor da pressão atmosférica em (kPa).");
+        return false;
+    }
+
     if(document.getElementById("latitude-graus").value == "") {
         alert("Entre com o valor da latitude em graus.");
         return false;
@@ -81,6 +86,7 @@ function makkink() {
 	var tempMax = parseFloat(document.getElementById('tempMax').value);
 	var tempMin = parseFloat(document.getElementById('tempMin').value);
     var tempBulbo = parseFloat(document.getElementById('tempBulbo').value);
+    var pAtm = parseFloat(document.getElementById('pAtm').value);
     var latGraus = parseFloat(document.getElementById('latitude-graus').value);
 	var latMin = parseFloat(document.getElementById('latitude-min').value);
 	var brilhoSolar = parseFloat(document.getElementById('brilhoSolar').value);
@@ -205,4 +211,8 @@ function makkink() {
     // calculo da declividade da curva de pressão de saturação
     var decPreSat;
     decPreSat = ((4098 * es) / (Math.pow((tempMedia + 237.3), 2)));
+
+    // calculo do coeficiente psicrométrico
+    var coePis;
+    coePis = (0.0016286 * (pAtm / 2.45));
 }
