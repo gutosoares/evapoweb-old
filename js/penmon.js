@@ -275,10 +275,15 @@ function penmon() {
     var ra;
     ra = (37.586 * dr * (ws * Math.sin(latitude) * Math.sin(decSolar) + Math.cos(latitude) * Math.cos(decSolar) * Math.sin(ws)));
 
+    // calculo  da rediação solar incidente
+    var rs;
+    rs = ((0.25 + 0.50 * (brilhoSolar / n)) * ra);
+
     console.log("ra", ra);
     console.log("dr", dr);
     console.log("ws", ws);
     console.log("lat", latitude);
     console.log("decsolar", decSolar);
+    console.log("rs", rs);
 
 }
