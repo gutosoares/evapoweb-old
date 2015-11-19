@@ -242,10 +242,6 @@ function makkink() {
     var n;
     n = ((24 / Math.PI) * ws);
 
-    // calculo da declinação solar
-    var decSolar;
-    decSolar = (0.4093 * (Math.sin((((2 * Math.PI) / 365) * diaJuliano) - 1.405)));
-
     // calculo relativa Terra-Sol
     var dr;
     dr = (1 + 0.033 * (Math.cos(((2 * Math.PI) / 365) * diaJuliano)));
