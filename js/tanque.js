@@ -51,5 +51,5 @@ function tanque() {
 	var eto;
 	eto = (kp * eca);
 
-	document.getElementById("resultado").value = eto.toFixed(2);
+	document.getElementById("resultado").value = eto.toFixed(2) + " mm/dia";
 }

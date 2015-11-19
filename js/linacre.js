@@ -48,6 +48,6 @@ function linacre() {
 	// calculo do Método de Linacre
 	var eto = 0;
 	eto = (((500 * (tm + (0.006 * h))) / (100 - latitude)) + (15 * (tm - to))) / (80 - tm);
-	
-	document.getElementById('resultado').value = eto.toFixed(2);
+
+	document.getElementById('resultado').value = eto.toFixed(2) + " mm/dia";
 }
