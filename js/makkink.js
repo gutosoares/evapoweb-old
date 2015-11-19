@@ -57,6 +57,11 @@ function makkink() {
         return false;
     }
 
+    if(document.getElementById("tempBulbo").value < 0 && (document.getElementsById("tempBulbo").value > 32)) {
+        alert("O valor da temperatura do bulbo deve ser entre 0 e 32 ˚C.");
+        return false;
+    }
+
     if(document.getElementById("pAtm").value == "") {
         alert("Entre com o valor da pressão atmosférica em (kPa).");
         return false;
@@ -225,9 +230,17 @@ function makkink() {
         latitude = ((latGraus + (-latMin)/60) * (Math.PI / 180));
     }
 
+    // calculo da declinação solar
+    var decSolar;
+    decSolar = (0.4093 * (Math.sin((((2 * Math.PI) / 365) * diaJuliano) - 1.405)));
+
     // calculo do angulo do nascer do sol
     var ws;
     ws = Math.acos((-Math.tan(latitude)) * (Math.tan(decSolar)));
+
+    // calculo da duração do dia
+    var n;
+    n = ((24 / Math.PI) * ws);
 
     // calculo da declinação solar
     var decSolar;
@@ -249,5 +262,5 @@ function makkink() {
     var eto = 0;
     eto = (0.61 * (rs / 2.45) * (decPreSat / (decPreSat + coePis)) - 0.12);
 
-    document.getElementById('resultado').value = eto.toFixed(2);
+    document.getElementById('resultado').value = eto.toFixed(2) + " mm/dia";
 }
