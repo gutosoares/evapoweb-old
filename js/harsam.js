@@ -195,6 +195,7 @@ function harsam() {
         latitude = ((latGraus + (-latMin)/60) * (Math.PI / 180));
     }
 
+
     // calculo da declinação solar
     var decSolar;
     decSolar = (0.4093 * (Math.sin((((2 * Math.PI) / 365) * diaJuliano) - 1.405)));
@@ -213,7 +214,8 @@ function harsam() {
 
     // calculo do Método HS
     var eto;
-    eto = (0.0023 * (Math.pow(tempMax - tempMin), 0.5) * (tempMedia + 17.8) * ra * 0.408);
+    eto = (0.0023 * (Math.pow((tempMax - tempMin), 0.5)) * (tempMedia + 17.8) * ra);
 
+    //eto = (0.0023 * 17 * Math.pow((tempMax - tempMin), 0.5) * (tempMedia + 17.8));
     document.getElementById('resultado').value = eto.toFixed(2) + " mm/dia";
 }
