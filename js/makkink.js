@@ -207,7 +207,12 @@ function makkink() {
 
     // calculo da temperatura media
     var tempMedia;
-    tempMedia = ((temp1 + tempMax + tempMin + (2 * temp2)) / 5);
+    tempMedia = ((temp1 + temp2 + (2 * temp3)) / 4);
+
+    // calculo da temperatura media do bulbo úmido
+    var tempMediaBuldo;
+    tempMediaBuldo = ((tempBulbo1 + tempBulbo2 + (2 * tempBulbo3)) / 4);
+    console.log(tempMediaBuldo);
 
     // calculo da pressão de saturação
     var es;
