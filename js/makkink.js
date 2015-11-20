@@ -207,7 +207,7 @@ function makkink() {
 
     // calculo da temperatura media
     var tempMedia;
-    tempMedia = ((temp1 + temp2 + (2 * temp3)) / 4);
+    tempMedia = 23.4;//((temp1 + temp2 + (2 * temp3)) / 4);
 
     // calculo da temperatura media do bulbo úmido
     var tempMediaBuldo;
@@ -263,13 +263,17 @@ function makkink() {
     var ra;
     ra = (37.586 * dr * (ws * Math.sin(latitude) * Math.sin(decSolar) + Math.cos(latitude) * Math.cos(decSolar) * Math.sin(ws)));
 
+    //
+    var a;
+    a = (0.29 * Math.cos(latitude));
+
     // calculo  da rediação solar incidente
     var rs;
-    rs = ((0.25 + 0.50 * (brilhoSolar / n)) * ra);
+    rs = ((a + 0.52 * (brilhoSolar / n)) * ra);
 
     // calculo do Método Makkink
     var eto = 0;
-    eto = (0.61 * (rs / 2.45) * (decPreSat / (decPreSat + coePis)) - 0.12);
+    eto = ((0.61 * w * (rs / 2.45)) - 0.12);
 
     document.getElementById('resultado').value = eto.toFixed(2) + " mm/dia";
 }
