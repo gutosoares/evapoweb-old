@@ -38,27 +38,26 @@ function makkink() {
     }
 
     if(document.getElementById("temp2").value == "") {
+        alert("Entre com o valor da temperatura as 15h00.")
+    }
+
+    if(document.getElementById("temp3").value == "") {
         alert("Entre com o valor da temperatura as 21h00.");
         return false;
     }
 
-    if(document.getElementById("tempMax").value == "") {
-        alert("Entre com o valor da temperatura máxima.");
+    if(document.getElementById("tempBulbo1").value == "") {
+        alert("Entre com o valor da temperatura do bulbo úmido as 9h00.");
         return false;
     }
 
-    if(document.getElementById("tempMin").value == "") {
-        alert("Entre com o valor da temperatura mínima.");
+    if(document.getElementById("tempBulbo2").value == "") {
+        alert("Entre com o valor da temperatura do bulbo úmido as 15h00.");
         return false;
     }
 
-    if(document.getElementById("tempBulbo").value == "") {
-        alert("Entre com o valor da temperatura do bulbo.");
-        return false;
-    }
-
-    if(document.getElementById("tempBulbo").value < 0 && (document.getElementsById("tempBulbo").value > 32)) {
-        alert("O valor da temperatura do bulbo deve ser entre 0 e 32 ˚C.");
+    if(document.getElementById("tempBulbo3").value == "") {
+        alert("Entre com o valor da temperatura do bulbo úmido as 21h00.");
         return false;
     }
 
@@ -88,9 +87,10 @@ function makkink() {
 	var ano = parseFloat(document.getElementById('ano').value);
 	var temp1 = parseFloat(document.getElementById('temp1').value);
 	var temp2 = parseFloat(document.getElementById('temp2').value);
-	var tempMax = parseFloat(document.getElementById('tempMax').value);
-	var tempMin = parseFloat(document.getElementById('tempMin').value);
-    var tempBulbo = parseFloat(document.getElementById('tempBulbo').value);
+	var temp3 = parseFloat(document.getElementById('temp3').value);
+	var tempBulbo1 = parseFloat(document.getElementById('tempBulbo1').value);
+	var tempBulbo2 = parseFloat(document.getElementById('tempBulbo2').value);
+    var tempBulbo3 = parseFloat(document.getElementById('tempBulbo3').value);
     var pAtm = parseFloat(document.getElementById('pAtm').value);
     var latGraus = parseFloat(document.getElementById('latitude-graus').value);
 	var latMin = parseFloat(document.getElementById('latitude-min').value);
