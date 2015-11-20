@@ -189,7 +189,61 @@ function jenhai() {
 
     // calculo da temperatura media
     var tempMedia;
-    tempMedia = ((temp1 + temp2 + (2 * temp3)) / 4);
+    tempMedia = 23.4;//((temp1 + temp2 + (2 * temp3)) / 4);
 
+    // calculo da pressão de saturação
+    var es;
+    es = (0.6108 * (Math.pow(10, ((7.5 * tempMedia) / (237.3 + tempMedia)))));
+
+    // calculo da declividade da curva de pressão de saturação
+    var decPreSat;
+    decPreSat = ((4098 * es) / (Math.pow((tempMedia + 237.3), 2)));
+
+    // calculo do coeficiente psicrométrico
+    var coePis;
+    coePis = (0.0016286 * (pAtm / 2.45));
+
+    // calculo da latitude
+	var latitude;
+    if(latGraus > 0) {
+	    latitude = ((latGraus + (latMin)/60) * (Math.PI / 180));
+    }
+    else {
+        latitude = ((latGraus + (-latMin)/60) * (Math.PI / 180));
+    }
+
+    // calculo da declinação solar
+    var decSolar;
+    decSolar = (0.4093 * (Math.sin((((2 * Math.PI) / 365) * diaJuliano) - 1.405)));
+
+    // calculo do angulo do nascer do sol
+    var ws;
+    ws = Math.acos((-Math.tan(latitude)) * (Math.tan(decSolar)));
+
+    // calculo da duração do dia
+    var n;
+    n = ((24 / Math.PI) * ws);
+
+    // calculo relativa Terra-Sol
+    var dr;
+    dr = (1 + 0.033 * (Math.cos(((2 * Math.PI) / 365) * diaJuliano)));
+
+    // calculo da radiação no topo da atmosfera
+    var ra;
+    ra = (37.586 * dr * (ws * Math.sin(latitude) * Math.sin(decSolar) + Math.cos(latitude) * Math.cos(decSolar) * Math.sin(ws)));
+
+    //
+    var a;
+    a = (0.29 * Math.cos(latitude));
+
+    // calculo  da rediação solar incidente
+    var rs;
+    rs = ((a + 0.52 * (brilhoSolar / n)) * ra);
+
+    // calculo do Método Jensen-Haise
+    var eto = 0;
+    eto = ((rs / 2.45) * ((0.0252 * tempMedia) + 0.078));
+
+    document.getElementById('resultado').value = eto.toFixed(2) + " mm/dia";
 
 }
