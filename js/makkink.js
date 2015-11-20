@@ -212,7 +212,15 @@ function makkink() {
     // calculo da temperatura media do bulbo úmido
     var tempMediaBuldo;
     tempMediaBuldo = ((tempBulbo1 + tempBulbo2 + (2 * tempBulbo3)) / 4);
-    console.log(tempMediaBuldo);
+
+    // calculo do fator de ponderação
+    var w;
+    if((tempMediaBuldo > 0) && (tempMediaBuldo < 16)) {
+        w = (0.407 + 0.0145 * tempMediaBuldo);
+    }
+    else {
+        w = (0.483 + 0.01 * tempMediaBuldo);
+    }
 
     // calculo da pressão de saturação
     var es;
