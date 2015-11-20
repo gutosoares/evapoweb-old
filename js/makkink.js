@@ -207,7 +207,7 @@ function makkink() {
 
     // calculo da temperatura media
     var tempMedia;
-    tempMedia = 23.4;//((temp1 + temp2 + (2 * temp3)) / 4);
+    tempMedia = ((temp1 + temp2 + (2 * temp3)) / 4);
 
     // calculo da temperatura media do bulbo úmido
     var tempMediaBuldo;
