@@ -184,7 +184,7 @@ function harsam() {
 
     // calculo da temperatura media
     var tempMedia;
-    tempMedia = ((temp1 + tempMax + tempMin + (2 * temp2)) / 5);
+    tempMedia = 23.4; //((temp1 + tempMax + tempMin + (2 * temp2)) / 5);
 
     // calculo da latitude
 	var latitude;
@@ -194,7 +194,6 @@ function harsam() {
     else {
         latitude = ((latGraus + (-latMin)/60) * (Math.PI / 180));
     }
-
 
     // calculo da declinação solar
     var decSolar;
@@ -211,6 +210,7 @@ function harsam() {
     // calculo da radiação no topo da atmosfera
     var ra;
     ra = (37.586 * dr * (ws * Math.sin(latitude) * Math.sin(decSolar) + Math.cos(latitude) * Math.cos(decSolar) * Math.sin(ws)));
+    ra = (ra/2.45);
 
     // calculo do Método HS
     var eto;
@@ -218,4 +218,9 @@ function harsam() {
 
     //eto = (0.0023 * 17 * Math.pow((tempMax - tempMin), 0.5) * (tempMedia + 17.8));
     document.getElementById('resultado').value = eto.toFixed(2) + " mm/dia";
+
+    console.log("dr", dr);
+    console.log("ra", ra);
+    console.log("eto", eto);
+
 }
