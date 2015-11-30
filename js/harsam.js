@@ -184,7 +184,7 @@ function harsam() {
 
     // calculo da temperatura media
     var tempMedia;
-    tempMedia = 23.4; //((temp1 + tempMax + tempMin + (2 * temp2)) / 5);
+    tempMedia = ((temp1 + tempMax + tempMin + (2 * temp2)) / 5);
 
     // calculo da latitude
 	var latitude;
