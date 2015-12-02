@@ -31,7 +31,12 @@ function linacre() {
 
 	// calculo da latitude
 	var latitude;
-	latitude = (latGraus + (latMin)/60);
+	if(latGraus > 0) {
+	    latitude = ((latGraus + (latMin)/60));
+    }
+    else {
+        latitude = ((latGraus + (-latMin)/60));
+    }
 
 	// calculo da pressão de saturação de vapor
 	var es;
@@ -49,5 +54,5 @@ function linacre() {
 	var eto = 0;
 	eto = (((500 * (tm + (0.006 * h))) / (100 - latitude)) + (15 * (tm - to))) / (80 - tm);
 
-	document.getElementById('resultado').value = eto.toFixed(2) + " mm/dia";
+	document.getElementById("resultado").value = (eto.toFixed(2) + " mm/dia");
 }
