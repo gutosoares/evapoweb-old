@@ -46,3 +46,16 @@
 	display: block;
 	margin: 20px;
 }
+
+/* Media query para corrigir o problema do menu */
+@media screen and(max-width: 1200px) {
+	.hide-menu {
+		display: none;
+	}
+}
+
+@media screen and(min-width: 1201px) {
+	.show-menu {
+		display: none;
+	}
+}
