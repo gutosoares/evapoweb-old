@@ -12,7 +12,7 @@
 	-webkit-box-shadow: 10px 10px 5px #DDD;
 	-moz-box-shadow: 10px 10px 5px #DDD;
 	-ms-box-shadow: 10px 10px 5px #DDD;
-	-o-box-shadow: 10px 10px 5px #DDD; 
+	-o-box-shadow: 10px 10px 5px #DDD;
 	box-shadow: 10px 10px 5px #DDD;
 }
 
@@ -47,15 +47,14 @@
 	margin: 20px;
 }
 
-/* Media query para corrigir o problema do menu */
-@media screen and(max-width: 1200px) {
-	.hide-menu {
+@media (max-width: 1200px) {
+	.hide {
 		display: none;
 	}
 }
 
-@media screen and(min-width: 1201px) {
-	.show-menu {
+@media (min-width: 1201px) {
+	.show {
 		display: none;
 	}
 }
