@@ -47,7 +47,7 @@
 				<div class="mdl-grid">
 					<div class="mdl-cell mdl-cell--6-col">
 						<h1 class="title-method">Método Tanque Classe A</h1>
-						<form action="#">
+						<form action="tanque.html" onsubmit="return tanque(this)">
 							<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
 								<input id="bor" type="text" class="mdl-textfield__input" pattern="-?[0-9]*(\.[0-9]+)?">
 								<label class="mdl-textfield__label" for="bordadura">Bordadura:(metros)</label>
@@ -87,7 +87,7 @@
 
 							<br>
 
-							<button type="submit" class="mdl-button mdl-js-button mdl-button--raised mdl-button--accent mdl-js-ripple-effect calc-btn" onclick="tanque()">Calcular!</button>
+							<button type="submit" class="mdl-button mdl-js-button mdl-button--raised mdl-button--accent mdl-js-ripple-effect calc-btn">Calcular!</button>
 
 						</form>
 					</div>
