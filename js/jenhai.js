@@ -246,4 +246,5 @@ function jenhai() {
 
     document.getElementById('resultado').value = eto.toFixed(2) + " mm/dia";
 
+    return false;
 }
