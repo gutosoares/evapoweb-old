@@ -217,4 +217,6 @@ function harsam() {
     eto = (0.0023 * (Math.pow((tempMax - tempMin), 0.5)) * (tempMedia + 17.8) * ra);
 
     document.getElementById('resultado').value = eto.toFixed(2) + " mm/dia";
+
+    return false;
 }
