@@ -48,7 +48,7 @@
 				<div class="mdl-grid">
 					<div class="mdl-cell mdl-cell--9-col">
 						<h1 class="title-method">Método Penman-Monteith (FAO-56)</h1>
-						<form action="#">
+						<form action="penmon.html" onsubmit="return penmon(this)">
 							<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
 								<input id="dia" type="text" class="mdl-textfield__input" pattern="-?[0-9]*(\.[0-9]+)?">
 								<label for="dia" class="mdl-textfield__label">Dia:</label>
@@ -170,7 +170,7 @@
 
 							<br>
 
-							<button type="submit" class="mdl-button mdl-js-button mdl-button--raised mdl-button--accent mdl-js-ripple-effect calc-btn" onclick="penmon()">Calcular!</button>
+							<button type="submit" class="mdl-button mdl-js-button mdl-button--raised mdl-button--accent mdl-js-ripple-effect calc-btn">Calcular!</button>
 						</form>
 					</div>
 				</div>
