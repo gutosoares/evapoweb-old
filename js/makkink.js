@@ -276,4 +276,6 @@ function makkink() {
     eto = ((0.61 * w * (rs / 2.45)) - 0.12);
 
     document.getElementById('resultado').value = eto.toFixed(2) + " mm/dia";
+
+    return false;
 }
