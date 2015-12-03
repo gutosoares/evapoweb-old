@@ -55,4 +55,6 @@ function linacre() {
 	eto = (((500 * (tm + (0.006 * h))) / (100 - latitude)) + (15 * (tm - to))) / (80 - tm);
 
 	document.getElementById("resultado").value = (eto.toFixed(2) + " mm/dia");
+
+	return false;
 }

@@ -50,10 +50,10 @@
 	        	<div class="mdl-grid">
 	            	<div class="mdl-cell mdl-cell--6-col">
 	              		<h1 class="title-method">Método Linacre</h1>
-	              		<form id="calcform" action="#">
+	              		<form id="calcform" action="linacre()" onsubmit="return linacre(this)">
 	            			<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
 							    <input id="tm" class="mdl-textfield__input" type="text" pattern="-?[0-9]*(\.[0-9]+)?">
-							    <label class="mdl-textfield__label" for="temp-media">Tm:(ºC)</label>
+							    <label class="mdl-textfield__label" for="temp-media">Temperatura média:(ºC)</label>
 							    <span class="mdl-textfield__error">Isso não é um número!</span>
 							</div>
 
@@ -61,7 +61,7 @@
 
 							<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
 								<input id="ur" class="mdl-textfield__input" type="text" pattern="-?[0-9]*(\.[0-9]+)?">
-								<label class="mdl-textfield__label" for="umi-relativa">UR:(%)</label>
+								<label class="mdl-textfield__label" for="umi-relativa">Umidade Relativa:(%)</label>
 								<span class="mdl-textfield__error">Isso não é um número!</span>
 							</div>
 
@@ -96,7 +96,7 @@
 
 							<br>
 
-							<button type="submit" class="mdl-button mdl-js-button mdl-button--raised mdl-button--accent mdl-js-ripple-effect calc-btn" onclick="linacre()">Calcular!</button>
+							<button type="submit" class="mdl-button mdl-js-button mdl-button--raised mdl-button--accent mdl-js-ripple-effect calc-btn">Calcular!</button>
 	              		</form>
 	            	</div>
 	          	</div>
