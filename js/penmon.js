@@ -224,7 +224,7 @@ function penmon() {
 
     // calculo da pressão de saturação
     var es;
-    es = (0.6108 * (Math.pow(10, ((7.5 * tempMedia) / (237.3 + tempMedia)))));
+    es = (0.6108 * (Math.exp(((17.27 * tempMedia) / (237.3 + tempMedia)))));
 
     // calculo da declividade da curva de pressão de saturação
     var decPreSat;
@@ -236,7 +236,7 @@ function penmon() {
 
     // calculo do coeficiente psicrométrico modificado
     var pisMod;
-    pisMod = (coePis * (1 + 0.33 * velVento));
+    pisMod = (coePis * (1 + (0.33 * velVento)));
 
     // calculo da umidade relativa media
     var urMedia;
@@ -248,7 +248,12 @@ function penmon() {
 
     // calculo da declinação solar
     var decSolar;
-    decSolar = (0.4093 * (Math.sin((((2 * Math.PI) / 365) * diaJuliano) - 1.405)));
+    if (((((ano % 4) == 0) && (ano % 100) != 0) || (ano % 400)==0)) {
+        decSolar = (0.4093 * (Math.sin((((2 * Math.PI) / 366) * diaJuliano) - 1.405)));
+    }
+    else {
+        decSolar = (0.4093 * (Math.sin((((2 * Math.PI) / 365) * diaJuliano) - 1.405)));
+    }
 
     // calculo da latitude
 	var latitude;
@@ -264,34 +269,61 @@ function penmon() {
     ws = Math.acos((-Math.tan(latitude)) * (Math.tan(decSolar)));
 
     // calculo da duração do dia
-    var n;
-    n = ((24 / Math.PI) * ws);
+    var N;
+    N = ((24 / Math.PI) * ws);
 
-    // calculo relativa Terra-Sol
+    // calculo distancia relativa Terra-Sol
     var dr;
-    dr = (1 + 0.033 * (Math.cos(((2 * Math.PI) / 365) * diaJuliano)));
+    if (((((ano % 4) == 0) && (ano % 100) != 0) || (ano % 400)==0)) {
+        dr = (1 + (0.033 * (Math.cos(((2 * Math.PI) / 366) * diaJuliano))));
+    }
+    else {
+        dr = (1 + (0.033 * (Math.cos(((2 * Math.PI) / 365) * diaJuliano))));
+    }
 
     // calculo da radiação no topo da atmosfera
     var ra;
-    ra = (37.586 * dr * (ws * Math.sin(latitude) * Math.sin(decSolar) + Math.cos(latitude) * Math.cos(decSolar) * Math.sin(ws)));
+    ra = (37.586 * (dr * (ws * Math.sin(latitude) * Math.sin(decSolar)) + (Math.cos(latitude) * Math.cos(decSolar) * Math.sin(ws))));
 
     // calculo  da rediação solar incidente
     var rs;
-    rs = ((0.25 + 0.50 * (brilhoSolar / n)) * ra);
+    rs = ((0.27 + (0.52 * (brilhoSolar / N))) * ra);
 
     // calculo do saldo de radiação de ondas curtas
     var boc;
     boc = ((1 - 0.23) * rs);
 
     // caculo balanço de ondas longas
-    var eaMod = ((ea * 760) / 100);
     var tempMaxK = (tempMax + 273);
     var tempMinK = (tempMin + 273);
 
     var bol;
-    bol = -(0.000000004903 * (tempMedia + 273) * (0.09 * Math.sqrt(eaMod) - 0.56) * (0.1 + 0.9 * (brilhoSolar/ n)));
+    bol = -(((0.9 * brilhoSolar / N) + 0.1) * (0.34 - (0.14 * Math.sqrt(ea))) * (0.000000004903 * ((Math.pow(tempMaxK, 4)) + (Math.pow(tempMinK, 4))) * 0.5));
 
-    console.log("eaMod", eaMod);
+    var saldoRadiacao;
+    saldoRadiacao = (boc + bol);
+
+    console.log("tempMedia", tempMedia);
+    console.log("es", es);
+    console.log("decPreSat", decPreSat);
+    console.log("coePis", coePis);
+    console.log("pisMod", pisMod);
+    console.log("urMedia", urMedia);
+    console.log("ea", ea);
+    console.log("decSolar", decSolar);
+    console.log("dia juliano", diaJuliano);
+    console.log("ws", ws);
+    console.log("N", N);
+    console.log("dr", dr);
+    console.log("latitude", latitude);
+    console.log("ra", ra);
+    console.log("1", (ws * Math.sin(latitude) * Math.sin(decSolar)));
+    console.log("2", (Math.cos(latitude) * Math.cos(decSolar) * Math.sin(ws)));
+    console.log("rs", rs);
+    console.log("boc", boc);
     console.log("bol", bol);
+    console.log("saldoRadiacao", saldoRadiacao);
+
+    return false;
 
 }
