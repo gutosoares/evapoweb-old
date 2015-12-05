@@ -303,27 +303,11 @@ function penmon() {
     var saldoRadiacao;
     saldoRadiacao = (boc + bol);
 
-    console.log("tempMedia", tempMedia);
-    console.log("es", es);
-    console.log("decPreSat", decPreSat);
-    console.log("coePis", coePis);
-    console.log("pisMod", pisMod);
-    console.log("urMedia", urMedia);
-    console.log("ea", ea);
-    console.log("decSolar", decSolar);
-    console.log("dia juliano", diaJuliano);
-    console.log("ws", ws);
-    console.log("N", N);
-    console.log("dr", dr);
-    console.log("latitude", latitude);
-    console.log("ra", ra);
-    console.log("1", (ws * Math.sin(latitude) * Math.sin(decSolar)));
-    console.log("2", (Math.cos(latitude) * Math.cos(decSolar) * Math.sin(ws)));
-    console.log("rs", rs);
-    console.log("boc", boc);
-    console.log("bol", bol);
-    console.log("saldoRadiacao", saldoRadiacao);
+    // calculo do método PM
+    var eto;
+    eto = (((decPreSat / (decPreSat + pisMod)) * ((saldoRadiacao) * (1 / 2.45))) + ((coePis / (decPreSat + pisMod)) * (900 / (tempMedia + 275)) * (velVento) * (es - ea)));
+
+    document.getElementById('resultado').value = eto.toFixed(2) + " mm/dia";
 
     return false;
-
 }
