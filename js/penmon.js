@@ -218,6 +218,9 @@ function penmon() {
         }
     }
 
+    // transformação da velociade do vento a 2 mestros
+    velVento = (velVento * 0.75);
+
     // calculo da temperatura media
     var tempMedia;
     tempMedia = ((temp1 + tempMax + tempMin + (2 * temp2)) / 5);
