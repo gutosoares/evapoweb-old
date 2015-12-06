@@ -55,8 +55,8 @@
 	              		<h1 class="title-method">Método Linacre</h1>
 	              		<form id="calcform" action="linacre()" onsubmit="return linacre(this)">
 	            			<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-							    <input id="tm" class="mdl-textfield__input" type="text" pattern="-?[0-9]*(\.[0-9]+)?">
-							    <label class="mdl-textfield__label" for="temp-media">Temperatura média:(ºC)</label>
+							    <input id="tempMedia" class="mdl-textfield__input" type="text" pattern="-?[0-9]*(\.[0-9]+)?">
+							    <label class="mdl-textfield__label" for="tempMedia">Temperatura média diaria: (ºC)</label>
 							    <span class="mdl-textfield__error">Isso não é um número!</span>
 							</div>
 
@@ -64,7 +64,7 @@
 
 							<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
 								<input id="ur" class="mdl-textfield__input" type="text" pattern="-?[0-9]*(\.[0-9]+)?">
-								<label class="mdl-textfield__label" for="umi-relativa">Umidade Relativa:(%)</label>
+								<label class="mdl-textfield__label" for="umi-relativa">Umidade Relativa média diaria: (%)</label>
 								<span class="mdl-textfield__error">Isso não é um número!</span>
 							</div>
 
@@ -72,7 +72,7 @@
 
 							<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
 								<input id="altura" class="mdl-textfield__input" type="text" pattern="-?[0-9]*(\.[0-9]+)?">
-								<label class="mdl-textfield__label" for="altura">Altura:(m)</label>
+								<label class="mdl-textfield__label" for="altura">Altitude: (m)</label>
 								<span class="mdl-textfield__error">Isso não é um número!</span>
 							</div>
 
@@ -80,7 +80,7 @@
 
 							<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
 								<input id="latitude-graus" class="mdl-textfield__input" type="text" pattern="-?[0-9]*(\.[0-9]+)?">
-								<label class="mdl-textfield__label" for="latitude-graus">Latitude:(º) OBS:(-)Sul e (+)Norte</label>
+								<label class="mdl-textfield__label" for="latitude-graus">Latitude:(º) OBS: valor positivo</label>
 								<span class="mdl-textfield__error">Isso não é um número!</span>
 							</div>
 

@@ -2,7 +2,7 @@
 
 function linacre() {
 	// válidação da váriaveis de entrada
-	if(document.getElementById('tm').value == "") {
+	if(document.getElementById('tempMedia').value == "") {
 		alert("Entre com o valor da temperatura média.");
 		return false;
 	}
@@ -23,7 +23,7 @@ function linacre() {
 	}
 
 	// criando as variaveis iniciais
-	var tm = parseFloat(document.getElementById('tm').value);
+	var tempMedia = parseFloat(document.getElementById('tempMedia').value);
 	var ur = parseFloat(document.getElementById('ur').value);
 	var h = parseFloat(document.getElementById('altura').value);
 	var latGraus = parseFloat(document.getElementById('latitude-graus').value);
@@ -31,16 +31,11 @@ function linacre() {
 
 	// calculo da latitude
 	var latitude;
-	if(latGraus > 0) {
-	    latitude = ((latGraus + (latMin)/60));
-    }
-    else {
-        latitude = ((latGraus + (-latMin)/60));
-    }
+	latitude = ((latGraus + (latMin)/60));
 
 	// calculo da pressão de saturação de vapor
 	var es;
-	es = (0.6108 * (Math.exp ((17.27 * tm) / (237.3 + tm))) * 7.5);
+	es = ((0.6108 * (Math.exp((17.27 * tempMedia) / (237.3 + tempMedia)))) * 7.5);
 
 	// calculo da variavel pressão atual de vapor
 	var ea;
@@ -52,7 +47,7 @@ function linacre() {
 
 	// calculo do Método de Linacre
 	var eto = 0;
-	eto = (((500 * (tm + (0.006 * h))) / (100 - latitude)) + (15 * (tm - to))) / (80 - tm);
+	eto = (((500 * (tempMedia + (0.006 * h))) / (100 - latitude)) + (15 * (tempMedia - to))) / (80 - tempMedia);
 
 	document.getElementById("resultado").value = (eto.toFixed(2) + " mm/dia");
 
