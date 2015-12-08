@@ -2,8 +2,9 @@
 
 /* Google Fonts */
 @import url(https://fonts.googleapis.com/css?family=Play|Titillium+Web);
+@import url(https://fonts.googleapis.com/css?family=Iceland);
 
-.mdl-cell {
+.mdl-grid > .mdl-cell{
 	background: #f1f1f1;
 	height: 100%;
 	margin: 0 auto;
@@ -54,6 +55,40 @@
 	font-size: 20px;
 	color: #fff;
 	text-align: center;
+}
+
+.description {
+	font-family: "Roboto", Helvetica, sans-serif;
+	font-size: 20px;
+	color: #676565;
+	line-height: 30px;
+	margin-top: 20px;
+}
+
+.page-content .mdl-grid .mdl-cell {
+	height: 100%;
+	margin: 0 auto;
+	margin-top: 20px;
+	margin-bottom: 20px;
+	background: #fff;
+	-webkit-box-shadow: 0px 0px 0px #fff;
+	-moz-box-shadow: 0px 0px 0px #fff;
+	-ms-box-shadow: 0px 0px 0px #fff;
+	-o-box-shadow: 0px 0px 0px #fff;
+	box-shadow: 0px 0px 0px #fff;
+	max-width: 795px;
+}
+
+.description span {
+	font-family: "Play", sans-serif;
+	font-size: 25px;
+	color: #FF4081;
+}
+
+.description .aspas {
+	color: rgb(71, 92, 174);
+	font-size: 50px;
+	font-family: 'Iceland', cursive;
 }
 
 .mdl-textfield input, label, span {
