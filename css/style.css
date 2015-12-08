@@ -32,6 +32,30 @@
 	border-bottom: 4px solid #FF4081;
 }
 
+/* Home */
+.content {
+	width: 100%;
+	height: 400px;
+	background: url("../img/background.png") no-repeat;
+	background-position: center;
+	margin-top: -25px;
+}
+
+.content .title {
+	font-family: "Play", sans-serif;
+	font-size: 100px;
+	color: #fff;
+	text-align: center;
+	padding-top: 50px;
+}
+
+.content .subtitle {
+	font-family: "Roboto", Helvetica, sans-serif;
+	font-size: 20px;
+	color: #fff;
+	text-align: center;
+}
+
 .mdl-textfield input, label, span {
 	margin-left: 20px;
 }
