@@ -4,8 +4,8 @@
 @import url(https://fonts.googleapis.com/css?family=Play|Titillium+Web);
 @import url(https://fonts.googleapis.com/css?family=Iceland);
 
-.mdl-grid > .mdl-cell{
-	background: #f1f1f1 !important;
+.evapoweb-content {
+	background: #fff;
 	height: 100%;
 	margin: 0 auto;
 	margin-top: 20px;
@@ -17,10 +17,17 @@
 	box-shadow: 10px 10px 5px #DDD !important;
 }
 
+.mdl-grid .mdl-card {
+	background-color: #f1f1f1;
+	padding: 40px 40px;
+	border-radius: 2px;
+}
+
 .mdl-layout-title {
 	font-family: 'Play', sans-serif;
 	font-size: 24px;
 }
+
 .title-method {
 	text-align: center;
 }
