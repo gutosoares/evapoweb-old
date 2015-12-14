@@ -103,6 +103,11 @@
 	margin: 20px;
 }
 
+/* Footer */
+.mdl-mini-footer .mdl-logo {
+	font-family: "Play", sans-serif;
+}
+
 @media (max-width: 1200px) {
 	.hide {
 		display: none;
