@@ -160,11 +160,6 @@
   font-size: 13px;
 }
 
-/*Página de Ajuda */
-.formula {
-	margin: 0 50% 0 10%;
-}
-
 @media (max-width: 1200px) {
 	.hide {
 		display: none;
