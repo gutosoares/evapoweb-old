@@ -34,7 +34,7 @@
                     <p>
                         EvapoWeb é uma ferramenta de uso acadêmico que visa facilitar o entendimento de cálculos de Evapotranspiração referencial (ETo). Permite estimar a ETo utilizando-se de métodos que possuem escala diária (mm.dˉ¹) e tem como vantagens: seu uso em diferentes tipos de dispositivos sem necessidade de instalação e interface amigável. A ferramenta foi desenvolvida por alunos da Universidade Federal de Lavras (UFLA-MG).
                     </p>
-                    
+
                     <h3>Métodos calculados pelo EvapoWeb</h3>
                     <h4>Penman-Monteith (FAO 56)</h4>
                     <p>
@@ -52,6 +52,21 @@
                     <p>U2: Velocidade do vento a 2m (m sˉ¹);</p>
                     <p>Rn: Saldo de Radiação (MJ mˉ² dˉ¹);</p>
                     <p>G: Fluxo de calor no solo.</p>
+
+                    <h4>Tanque Classe A</h4>
+                    <p>
+                        É um método bastante utilizado e recomendado pela FAO, principalmente em projetos de irrigação. Como a evaporação no tanque (ECA) é superior a quantidade de água transferida da vegetação (cultura de referência: grama) para a atmosfera, a ETo é calculada por um fator de ajuste (Kp) que será sempre menor que 1 e pode ser estimado atravez de uma equação ou por uma tabela que relaciona umidade relativa média, velocidade do vento e tamanho da bordadura com coeficiente Kp.
+                    </p>
+                    <p>Sendo:</p>
+                    <p>ETo: Evapotranspiração de Referência (mm dˉ¹);</p>
+                    <p>Kp: Fator de Ajuste;</p>
+                    <p>ECA: Evaporação no tanque classe A (mm dˉ¹).</p>
+                    <br />
+                    <p>Para se estimar o Kp utilizou-se a seguinte equação:</p>
+                    <p>Sendo:</p>
+                    <p>U2: Velocidade do vento a 2m (m sˉ¹);</p>
+                    <p>Bord: Bordadura do tanque (m);</p>
+                    <p>UR: Umidade Relativa (%).</p>
                 </div>
             </div>
             <footer class="mdl-mini-footer">
