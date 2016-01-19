@@ -160,6 +160,20 @@
   font-size: 13px;
 }
 
+div.formula {
+	text-align: center;
+	width: 100%;
+}
+
+div.formula img {
+	margin: 0 auto;
+}
+
+img {
+	max-width: 100%;
+}
+
+/*Media Query*/
 @media (max-width: 1200px) {
 	.hide {
 		display: none;
