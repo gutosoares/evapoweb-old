@@ -188,6 +188,12 @@ img {
 }
 
 /*Animações da página principal*/
+.mdl-layout__content h1,
+.mdl-layout__content p.subtitle,
+.mdl-layout__content .mdl-card {
+	opacity: 0;
+}
+
 .animated {
 	-webkit-animation-duration: 1s;
 	animation-duration: 1s;
