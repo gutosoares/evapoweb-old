@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset
+      xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
+            http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+
+<url>
+  <loc>http://evapotranspiracao.com.br/</loc>
+  <lastmod>2016-02-18T17:58:36+00:00</lastmod>
+  <changefreq>monthly</changefreq>
+  <priority>1.00</priority>
+</url>
+<url>
+  <loc>http://evapotranspiracao.com.br/index.html</loc>
+  <lastmod>2016-02-18T17:58:36+00:00</lastmod>
+  <changefreq>monthly</changefreq>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>http://evapotranspiracao.com.br/penmon.html</loc>
+  <lastmod>2016-02-18T17:58:36+00:00</lastmod>
+  <changefreq>monthly</changefreq>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>http://evapotranspiracao.com.br/linacre.html</loc>
+  <lastmod>2016-02-18T17:58:36+00:00</lastmod>
+  <changefreq>monthly</changefreq>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>http://evapotranspiracao.com.br/harsam.html</loc>
+  <lastmod>2016-02-18T17:58:36+00:00</lastmod>
+  <changefreq>monthly</changefreq>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>http://evapotranspiracao.com.br/jenhai.html</loc>
+  <lastmod>2016-02-18T17:58:36+00:00</lastmod>
+  <changefreq>monthly</changefreq>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>http://evapotranspiracao.com.br/makkink.html</loc>
+  <lastmod>2016-02-18T17:58:36+00:00</lastmod>
+  <changefreq>monthly</changefreq>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>http://evapotranspiracao.com.br/tanque.html</loc>
+  <lastmod>2016-02-18T17:58:36+00:00</lastmod>
+  <changefreq>monthly</changefreq>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>http://evapotranspiracao.com.br/ajuda.html</loc>
+  <lastmod>2016-02-18T17:58:36+00:00</lastmod>
+  <changefreq>monthly</changefreq>
+  <priority>0.80</priority>
+</url>
+</urlset>
