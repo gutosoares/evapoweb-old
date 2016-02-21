@@ -30,6 +30,7 @@
 
 .title-method {
 	text-align: center;
+	color: #242122;
 }
 
 .mdl-navigation__link {
@@ -192,6 +193,20 @@ img {
 @media (min-width: 1201px) {
 	.show {
 		display: none;
+	}
+}
+
+@media only screen and (max-width: 768px) {
+	.mdl-layout__content h1.title {
+		font-size: 60px;
+	}
+
+	.mdl-layout__content p.subtitle {
+		font-size: 18px;
+	}
+
+	.description {
+		text-align: center;
 	}
 }
 
