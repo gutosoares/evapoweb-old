@@ -197,6 +197,16 @@ img {
 	}
 }
 
+@media only screen and (max-width: 360) {
+	.mdl-textfield__input {
+		width: 90%;
+	}
+
+	.mdl-layout__content .title-method {
+		font-size: 22px;
+	}
+}
+
 @media only screen and (max-width: 768px) {
 	.mdl-layout__content h1.title {
 		font-size: 60px;
