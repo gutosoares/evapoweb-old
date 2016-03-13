@@ -31,6 +31,7 @@
 .title-method {
 	text-align: center;
 	color: #242122;
+	font-size: 45px;
 }
 
 .mdl-navigation__link {
@@ -199,6 +200,10 @@ img {
 @media only screen and (max-width: 768px) {
 	.mdl-layout__content h1.title {
 		font-size: 60px;
+	}
+
+	.mdl-layout__content .title-method {
+		font-size: 32px;
 	}
 
 	.mdl-layout__content p.subtitle {
