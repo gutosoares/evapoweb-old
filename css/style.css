@@ -197,6 +197,7 @@ img {
 	}
 }
 
+/* Phone portrait */
 @media only screen and (max-width: 370px) {
 	.mdl-textfield__input {
 		width: 92%;
@@ -204,6 +205,13 @@ img {
 
 	.mdl-layout__content .title-method {
 		font-size: 25px;
+	}
+}
+
+/* Window xsmall */
+@media only screen and (max-width: 480px) {
+	.mdl-textfield__input {
+		width: 92%;
 	}
 }
 
