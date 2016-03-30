@@ -53,7 +53,7 @@
 	              		<h1 class="title-method">Método Linacre</h1>
 	              		<form id="calcform" action="linacre()" onsubmit="return linacre(this)">
 	            			<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-							    <input id="tempMedia" class="mdl-textfield__input" type="number" pattern="-?[0-9]*(\.[0-9]+)?">
+							    <input id="tempMedia" class="mdl-textfield__input" type="text" pattern="-?[0-9]*(\.[0-9]+)?">
 							    <label class="mdl-textfield__label" for="tempMedia">Temperatura média diaria: (ºC)</label>
 							    <span class="mdl-textfield__error">Isso não é um número!</span>
 							</div>
@@ -61,7 +61,7 @@
 							<br>
 
 							<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-								<input id="ur" class="mdl-textfield__input" type="number" pattern="-?[0-9]*(\.[0-9]+)?">
+								<input id="ur" class="mdl-textfield__input" type="text" pattern="-?[0-9]*(\.[0-9]+)?">
 								<label class="mdl-textfield__label" for="umi-relativa">Umidade Relativa média diaria: (%)</label>
 								<span class="mdl-textfield__error">Isso não é um número!</span>
 							</div>
@@ -69,7 +69,7 @@
 							<br>
 
 							<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-								<input id="altura" class="mdl-textfield__input" type="number" pattern="-?[0-9]*(\.[0-9]+)?">
+								<input id="altura" class="mdl-textfield__input" type="text" pattern="-?[0-9]*(\.[0-9]+)?">
 								<label class="mdl-textfield__label" for="altura">Altitude: (metros)</label>
 								<span class="mdl-textfield__error">Isso não é um número!</span>
 							</div>
@@ -77,13 +77,13 @@
 							<br>
 
 							<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-								<input id="latitude-graus" class="mdl-textfield__input" type="number" pattern="-?[0-9]*(\.[0-9]+)?">
+								<input id="latitude-graus" class="mdl-textfield__input" type="text" pattern="-?[0-9]*(\.[0-9]+)?">
 								<label class="mdl-textfield__label" for="latitude-graus">Latitude:(º) OBS: valor positivo</label>
 								<span class="mdl-textfield__error">Isso não é um número!</span>
 							</div>
 
 							<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-								<input id="latitude-min" class="mdl-textfield__input" type="number" pattern="-?[0-9]*(\.[0-9]+)?">
+								<input id="latitude-min" class="mdl-textfield__input" type="text" pattern="-?[0-9]*(\.[0-9]+)?">
 								<label class="mdl-textfield__label" for="latitude-min">(')</label>
 								<span class="mdl-textfield__error">Isso não é um número!</span>
 							</div>
@@ -92,7 +92,7 @@
 
 							<div class="mdl-textfield mdl-js-textfied mdl-textfield--floating-label calc-result">
 								<span>Resultado:</span><label class="mdl-textfield__label" for="resultado"></label>
-								<input id="resultado" class="mdl-textfield__input" type="number">
+								<input id="resultado" class="mdl-textfield__input" type="text">
 							</div>
 
 							<br>

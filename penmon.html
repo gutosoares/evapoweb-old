@@ -51,19 +51,19 @@
 						<h1 class="title-method">Método Penman-Monteith (FAO-56)</h1>
 						<form action="penmon.html" onsubmit="return penmon(this)">
 							<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-								<input id="dia" type="number" class="mdl-textfield__input" pattern="-?[0-9]*(\.[0-9]+)?">
+								<input id="dia" type="text" class="mdl-textfield__input" pattern="-?[0-9]*(\.[0-9]+)?">
 								<label for="dia" class="mdl-textfield__label">Dia:</label>
 								<span class="mdl-textfield__error">Isso não é um número!</span>
 							</div>
 
 							<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-								<input id="mes" type="number" class="mdl-textfield__input" pattern="-?[0-9]*(\.[0-9]+)?">
+								<input id="mes" type="text" class="mdl-textfield__input" pattern="-?[0-9]*(\.[0-9]+)?">
 								<label for="mes" class="mdl-textfield__label">Mês:</label>
 								<span class="mdl-textfield__error">Isso não é um número!</span>
 							</div>
 
 							<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-								<input id="ano" type="number" class="mdl-textfield__input" pattern="-?[0-9]*(\.[0-9]+)?">
+								<input id="ano" type="text" class="mdl-textfield__input" pattern="-?[0-9]*(\.[0-9]+)?">
 								<label for="ano" class="mdl-textfield__label">Ano:</label>
 								<span class="mdl-textfield__error">Isso não é um número!</span>
 							</div>
@@ -71,7 +71,7 @@
 							<br>
 
 							<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-								<input id="temp1" class="mdl-textfield__input" type="number" pattern="-?[0-9]*(\.[0-9]+)?">
+								<input id="temp1" class="mdl-textfield__input" type="text" pattern="-?[0-9]*(\.[0-9]+)?">
 								<label class="mdl-textfield__label"	for="temp1">Temperatura: (9h)</label>
 								<span class="mdl-textfield__error">Isso não é um número!</span>
 							</div>
@@ -79,7 +79,7 @@
 							<br>
 
 							<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-								<input id="temp2" class="mdl-textfield__input" type="number" pattern="-?[0-9]*(\.[0-9]+)?">
+								<input id="temp2" class="mdl-textfield__input" type="text" pattern="-?[0-9]*(\.[0-9]+)?">
 								<label class="mdl-textfield__label" for="temp2">Temperatura: (21h)</label>
 								<span class="mdl-textfield__error">Isso não é um número!</span>
 							</div>
@@ -87,7 +87,7 @@
 							<br>
 
 							<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-								<input id="tempMax" class="mdl-textfield__input" type="number" pattern="-?[0-9]*(\.[0-9]+)?">
+								<input id="tempMax" class="mdl-textfield__input" type="text" pattern="-?[0-9]*(\.[0-9]+)?">
 								<label class="mdl-textfield__label" for="tempMax">Temperatura máxima: (˚C)</label>
 								<span class="mdl-textfield__error">Isso não é um número!</span>
 							</div>
@@ -95,7 +95,7 @@
 							<br>
 
 							<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-								<input id="tempMin" type="number" class="mdl-textfield__input" pattern="-?[0-9]*(\.[0-9]+)?">
+								<input id="tempMin" type="text" class="mdl-textfield__input" pattern="-?[0-9]*(\.[0-9]+)?">
 								<label for="tempMin" class="mdl-textfield__label">Temperatura mínima: (˚C)</label>
 								<span class="mdl-textfield__error">Isso não é número!</span>
 							</div>
@@ -103,7 +103,7 @@
 							<br>
 
 							<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-								<input id="pAtm" type="number" class="mdl-textfield__input" pattern="-?[0-9]*(\.[0-9]+)?">
+								<input id="pAtm" type="text" class="mdl-textfield__input" pattern="-?[0-9]*(\.[0-9]+)?">
 								<label for="pAtm" class="mdl-textfield__label">Pressão Atmosférica média diaria: (kPa)</label>
 								<span class="mdl-textfield__error">Isso não é um número!</span>
 							</div>
@@ -111,7 +111,7 @@
 							<br>
 
 							<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-								<input id="velVento" type="number" class="mdl-textfield__input" pattern="-?[0-9]*(\.[0-9]+)?">
+								<input id="velVento" type="text" class="mdl-textfield__input" pattern="-?[0-9]*(\.[0-9]+)?">
 								<label for="velVento" class="mdl-textfield__label">Velocidade do Vento média a 10 metros: (m/s)</label>
 								<span class="mdl-textfield__error">Isso não é um número!</span>
 							</div>
@@ -119,7 +119,7 @@
 							<br>
 
 							<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-								<input id="ur1" type="number" class="mdl-textfield__input" pattern="-?[0-9]*(\.[0-9]+)?">
+								<input id="ur1" type="text" class="mdl-textfield__input" pattern="-?[0-9]*(\.[0-9]+)?">
 								<label for="ur1" class="mdl-textfield__label">Umidade relativa: (9h)</label>
 								<span class="mdl-textfield__error">Isso não é um número!</span>
 							</div>
@@ -127,7 +127,7 @@
 							<br>
 
 							<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-								<input id="ur2" type="number" class="mdl-textfield__input" pattern="-?[0-9]*(\.[0-9]+)?">
+								<input id="ur2" type="text" class="mdl-textfield__input" pattern="-?[0-9]*(\.[0-9]+)?">
 								<label for="ur2" class="mdl-textfield__label">Umidade relativa: (15h)</label>
 								<span class="mdl-textfield__error">Isso não é um número!</span>
 							</div>
@@ -135,7 +135,7 @@
 							<br>
 
 							<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-								<input id="ur3" type="number" class="mdl-textfield__input" pattern="-?[0-9]*(\.[0-9]+)?">
+								<input id="ur3" type="text" class="mdl-textfield__input" pattern="-?[0-9]*(\.[0-9]+)?">
 								<label for="ur3" class="mdl-textfield__label">Umidade relativa: (21h)</label>
 								<span class="mdl-textfield__error">Isso não é um número!</span>
 							</div>
@@ -143,13 +143,13 @@
 							<br>
 
 							<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-								<input id="latitude-graus" class="mdl-textfield__input" type="number" pattern="-?[0-9]*(\.[0-9]+)?">
+								<input id="latitude-graus" class="mdl-textfield__input" type="text" pattern="-?[0-9]*(\.[0-9]+)?">
 								<label class="mdl-textfield__label" for="latitude-graus">Latitude:(º) OBS:(-)Sul e (+)Norte</label>
 								<span class="mdl-textfield__error">Isso não é um número!</span>
 							</div>
 
 							<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-								<input id="latitude-min" class="mdl-textfield__input" type="number" pattern="-?[0-9]*(\.[0-9]+)?">
+								<input id="latitude-min" class="mdl-textfield__input" type="text" pattern="-?[0-9]*(\.[0-9]+)?">
 								<label class="mdl-textfield__label" for="latitude-min">(')</label>
 								<span class="mdl-textfield__error">Isso não é um número!</span>
 							</div>
@@ -157,7 +157,7 @@
 							<br>
 
 							<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-								<input id="brilhoSolar" class="mdl-textfield__input" type="number" pattern="-?[0-9]*(\.[0-9]+)?">
+								<input id="brilhoSolar" class="mdl-textfield__input" type="text" pattern="-?[0-9]*(\.[0-9]+)?">
 								<label class="mdl-textfield__label" for="brilhoSolar">Insolação: (horas)</label>
 								<span class="mdl-textfield__error">Isso não é um número!</span>
 							</div>
@@ -166,7 +166,7 @@
 
 							<div class="mdl-textfield mdl-js-textfied mdl-textfield--floating-label calc-result">
 								<span>Resultado:</span><label class="mdl-textfield__label" for="resultado"></label>
-								<input id="resultado" class="mdl-textfield__input" type="number">
+								<input id="resultado" class="mdl-textfield__input" type="text">
 							</div>
 
 							<br>
