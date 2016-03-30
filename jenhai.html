@@ -8,9 +8,7 @@
 	<link rel="shortcut icon" href="img/favicon.png">
 	<link rel="stylesheet" href="lib/material.min.css">
     <link rel="stylesheet" href="css/style.min.css">
-    <script src="lib/material.min.js"></script>
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-    <script type="text/javascript" src="js/jenhai.min.js"></script>
 </head>
 <body>
     <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header mdl-color--grey-100">
@@ -53,19 +51,19 @@
                         <h1 class="title-method"> Método Jensen-Haise</h1>
                         <form action="jenhai.html" onsubmit="return jenhai(this)">
                             <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-								<input id="dia" type="text" class="mdl-textfield__input" pattern="-?[0-9]*(\.[0-9]+)?">
+								<input id="dia" type="number" class="mdl-textfield__input" pattern="-?[0-9]*(\.[0-9]+)?">
 								<label for="dia" class="mdl-textfield__label">Dia:</label>
 								<span class="mdl-textfield__error">Isso não é um número!</span>
 							</div>
 
 							<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-								<input id="mes" type="text" class="mdl-textfield__input" pattern="-?[0-9]*(\.[0-9]+)?">
+								<input id="mes" type="number" class="mdl-textfield__input" pattern="-?[0-9]*(\.[0-9]+)?">
 								<label for="mes" class="mdl-textfield__label">Mês:</label>
 								<span class="mdl-textfield__error">Isso não é um número!</span>
 							</div>
 
 							<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-								<input id="ano" type="text" class="mdl-textfield__input" pattern="-?[0-9]*(\.[0-9]+)?">
+								<input id="ano" type="number" class="mdl-textfield__input" pattern="-?[0-9]*(\.[0-9]+)?">
 								<label for="ano" class="mdl-textfield__label">Ano:</label>
 								<span class="mdl-textfield__error">Isso não é um número!</span>
 							</div>
@@ -73,7 +71,7 @@
 							<br>
 
 							<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-								<input id="temp1" class="mdl-textfield__input" type="text" pattern="-?[0-9]*(\.[0-9]+)?">
+								<input id="temp1" class="mdl-textfield__input" type="number" pattern="-?[0-9]*(\.[0-9]+)?">
 								<label class="mdl-textfield__label"	for="temp1">Temperatura: (9h)</label>
 								<span class="mdl-textfield__error">Isso não é um número!</span>
 							</div>
@@ -81,7 +79,7 @@
 							<br>
 
 							<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-								<input id="temp2" class="mdl-textfield__input" type="text" pattern="-?[0-9]*(\.[0-9]+)?">
+								<input id="temp2" class="mdl-textfield__input" type="number" pattern="-?[0-9]*(\.[0-9]+)?">
 								<label class="mdl-textfield__label"	for="temp2">Temperatura: (15h)</label>
 								<span class="mdl-textfield__error">Isso não é um número!</span>
 							</div>
@@ -89,7 +87,7 @@
 							<br>
 
 							<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-								<input id="temp3" class="mdl-textfield__input" type="text" pattern="-?[0-9]*(\.[0-9]+)?">
+								<input id="temp3" class="mdl-textfield__input" type="number" pattern="-?[0-9]*(\.[0-9]+)?">
 								<label class="mdl-textfield__label" for="temp3">Temperatura: (21h)</label>
 								<span class="mdl-textfield__error">Isso não é um número!</span>
 							</div>
@@ -97,7 +95,7 @@
                             <br>
 
                             <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-								<input id="brilhoSolar" class="mdl-textfield__input" type="text" pattern="-?[0-9]*(\.[0-9]+)?">
+								<input id="brilhoSolar" class="mdl-textfield__input" type="number" pattern="-?[0-9]*(\.[0-9]+)?">
 								<label class="mdl-textfield__label" for="brilhoSolar">Insolação: (horas)</label>
 								<span class="mdl-textfield__error">Isso não é um número!</span>
 							</div>
@@ -105,7 +103,7 @@
 							<br>
 
 							<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-								<input id="pAtm" type="text" class="mdl-textfield__input" pattern="-?[0-9]*(\.[0-9]+)?">
+								<input id="pAtm" type="number" class="mdl-textfield__input" pattern="-?[0-9]*(\.[0-9]+)?">
 								<label for="pAtm" class="mdl-textfield__label">Pressão Atmosférica média diaria: (kPa)</label>
 								<span class="mdl-textfield__error">Isso não é um número!</span>
 							</div>
@@ -113,13 +111,13 @@
 							<br>
 
 							<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-								<input id="latitude-graus" class="mdl-textfield__input" type="text" pattern="-?[0-9]*(\.[0-9]+)?">
+								<input id="latitude-graus" class="mdl-textfield__input" type="number" pattern="-?[0-9]*(\.[0-9]+)?">
 								<label class="mdl-textfield__label" for="latitude-graus">Latitude:(º) OBS:(-)Sul e (+)Norte</label>
 								<span class="mdl-textfield__error">Isso não é um número!</span>
 							</div>
 
 							<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-								<input id="latitude-min" class="mdl-textfield__input" type="text">
+								<input id="latitude-min" class="mdl-textfield__input" type="number">
 								<label class="mdl-textfield__label" for="latitude-min">(')</label>
 								<span class="mdl-textfield__error">Isso não é um número!</span>
 							</div>
@@ -128,7 +126,7 @@
 
 							<div class="mdl-textfield mdl-js-textfied mdl-textfield--floating-label calc-result">
 								<span>Resultado:</span><label class="mdl-textfield__label" for="resultado"></label>
-								<input id="resultado" class="mdl-textfield__input" type="text">
+								<input id="resultado">
 							</div>
 
 							<br>
@@ -163,6 +161,10 @@
         <!-- fim do conteudo principal -->
     </div>
     <!-- conteudo -->
+	
+	<!-- JS -->
+	<script src="lib/material.min.js"></script>
+	<script type="text/javascript" src="js/jenhai.min.js"></script>
 
 	<!-- Google Analytics -->
 	<script>
