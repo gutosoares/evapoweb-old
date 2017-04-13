@@ -10,11 +10,11 @@
 	margin: 0 auto;
 	margin-top: 20px;
 	margin-bottom: 20px;
-	-webkit-box-shadow: 10px 10px 5px #DDD !important;
-	-moz-box-shadow: 10px 10px 5px #DDD !important;
-	-ms-box-shadow: 10px 10px 5px #DDD !important;
-	-o-box-shadow: 10px 10px 5px #DDD !important;
-	box-shadow: 10px 10px 5px #DDD !important;
+	-webkit-box-shadow: 5px 5px 10px #DDD !important;
+	-moz-box-shadow: 5px 5px 10px #DDD !important;
+	-ms-box-shadow: 5px 5px 10px #DDD !important;
+	-o-box-shadow: 5px 5px 10px #DDD !important;
+	box-shadow: 5px 5px 10px #DDD !important;
 }
 
 .mdl-grid .mdl-card {
