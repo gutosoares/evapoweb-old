@@ -141,7 +141,7 @@ function penmon() {
 
     // calculo do dia Juliano
     var diaJuliano = 0;
-    if ((ano % 4 == 0) && ((ano % 100 != 0) || (ano % 400 == 0))) {
+    if ((ano % 4 == 0) && ((ano % 100 != 0)) || (ano % 400)==0) ) {
         if(mes == calendarioMes.janeiro) {
             diaJuliano = dia;
         }
@@ -227,7 +227,7 @@ function penmon() {
 
     // calculo da pressão de saturação
     var es;
-    es = (0.6108 * (Math.exp(((17.27 * tempMedia) / (237.3 + tempMedia)))));
+    es = (0.6108 * (Math.exp(((7.5 * tempMedia) / (237.3 + tempMedia)))));
 
     // calculo da declividade da curva de pressão de saturação
     var decPreSat;
@@ -251,23 +251,18 @@ function penmon() {
 
     // calculo da declinação solar
     var decSolar;
-    if (((((ano % 4) == 0) && (ano % 100) != 0) || (ano % 400)==0)) {
-        decSolar = (0.4093 * (Math.sin((((2 * Math.PI) / 366) * diaJuliano) - 1.405)));
-    }
-    else {
-        decSolar = (0.4093 * (Math.sin((((2 * Math.PI) / 365) * diaJuliano) - 1.405)));
-    }
-
+    decSolar = (0.4093 * (Math.sin((((2 * Math.PI) / 365) * diaJuliano) - 1.405)));
+    
     // calculo da latitude
 	var latitude;
     if(latGraus > 0) {
-	    latitude = ((latGraus + (latMin)/60) * (Math.PI / 180));
+	    latitude = ((latGraus + ((latMin)/60)) * (Math.PI / 180));
     }
     else {
         latitude = ((latGraus + (-latMin)/60) * (Math.PI / 180));
     }
 
-    // calculo do angulo do nascer do sol
+    // calculo do angulo do nascer do sol ou por do sol
     var ws;
     ws = Math.acos((-Math.tan(latitude)) * (Math.tan(decSolar)));
 
@@ -277,13 +272,8 @@ function penmon() {
 
     // calculo distancia relativa Terra-Sol
     var dr;
-    if (((((ano % 4) == 0) && (ano % 100) != 0) || (ano % 400)==0)) {
-        dr = (1 + (0.033 * (Math.cos(((2 * Math.PI) / 366) * diaJuliano))));
-    }
-    else {
-        dr = (1 + (0.033 * (Math.cos(((2 * Math.PI) / 365) * diaJuliano))));
-    }
-
+    dr = (1 + (0.033 * (Math.cos(((2 * Math.PI) / 365) * diaJuliano))));
+    
     // calculo da radiação no topo da atmosfera
     var ra;
     ra = (37.586 * (dr * (ws * Math.sin(latitude) * Math.sin(decSolar)) + (Math.cos(latitude) * Math.cos(decSolar) * Math.sin(ws))));
@@ -301,14 +291,14 @@ function penmon() {
     var tempMinK = (tempMin + 273);
 
     var bol;
-    bol = -(((0.9 * brilhoSolar / N) + 0.1) * (0.34 - (0.14 * Math.sqrt(ea))) * (0.000000004903 * ((Math.pow(tempMaxK, 4)) + (Math.pow(tempMinK, 4))) * 0.5));
+    bol = -(((0.9 * (brilhoSolar / N)) + 0.1) * (0.34 - (0.14 * Math.sqrt(ea))) * (0.000000004903 * ((Math.pow(tempMaxK, 4)) + (Math.pow(tempMinK, 4))) * 0.5));
 
     var saldoRadiacao;
     saldoRadiacao = (boc + bol);
 
     // calculo do método PM
     var eto;
-    eto = (((decPreSat / (decPreSat + pisMod)) * ((saldoRadiacao) * (1 / 2.45))) + ((coePis / (decPreSat + pisMod)) * (900 / (tempMedia + 275)) * (velVento) * (es - ea)));
+    eto = (((decPreSat / (decPreSat + pisMod)) * ((saldoRadiacao) * (1 / 2.45))) + ((coePis / (decPreSat + pisMod)) * (900 / (tempMedia + 273)) * (velVento) * (es - ea)));
 
     document.getElementById('resultado').value = eto.toFixed(2) + " mm/dia";
 
